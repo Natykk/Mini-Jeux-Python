@@ -19,46 +19,58 @@ def traceCroix():
         MyCanvas.create_line(23.3,76.7,76.7,23.3)
         MyCanvas.create_line(23.3,23.3,76.7,76.7)
         testGagne()
+        plateauRempli(c)
+       
         
     if a == 1:
         MyCanvas.create_line(123.3,76.7,176.7,23.3)
         MyCanvas.create_line(123.3,23.3,176.7,76.7)
         testGagne()
+        plateauRempli(c)
+        
         
     if a == 2:
         MyCanvas.create_line(223.3,76.7,276.7,23.3)
         MyCanvas.create_line(223.3,23.3,276.7,76.7)
         testGagne()
+        plateauRempli(c)
+        
         
     if a == 3:
         MyCanvas.create_line(23.3,176.7,76.7,123.3)
         MyCanvas.create_line(23.3,123.3,76.7,176.7)
         testGagne()
+        plateauRempli(c)
         
     if a == 4:
         MyCanvas.create_line(123.3,176.7,176.7,123.3)
         MyCanvas.create_line(123.3,123.3,176.7,176.7)
         testGagne()
+        plateauRempli(c)
     if a == 5:
         MyCanvas.create_line(223.3,176.7,276.7,123.3)
         MyCanvas.create_line(223.3,123.3,276.7,176.7)
         testGagne()
+        plateauRempli(c)
         
     if a == 6:
         MyCanvas.create_line(23.3,276.7,76.7,223.3)
         MyCanvas.create_line(23.3,223.3,76.7,276.7)
         testGagne()
+        plateauRempli(c)
         
     if a == 7:
         MyCanvas.create_line(123.3,276.7,176.7,223.3)
         MyCanvas.create_line(123.3,223.3,176.7,276.7)
         testGagne()
+        plateauRempli(c)
 
         
     if a == 8:
         MyCanvas.create_line(223.3,276.7,276.7,223.3)
         MyCanvas.create_line(223.3,223.3,276.7,276.7)
         testGagne()
+        plateauRempli(c)
         
     
 
@@ -69,39 +81,47 @@ def traceRond():
         MyCanvas.create_oval(23.3,76.7,76.7,23.3)
         MyCanvas.create_oval(23.3,23.3,76.7,76.7)
         testGagne()
+        plateauRempli(c)
     if a == 1:
         MyCanvas.create_oval(123.3,76.7,176.7,23.3)
         MyCanvas.create_oval(123.3,23.3,176.7,76.7)
         testGagne()
+        plateauRempli(c)
     if a == 2:
         MyCanvas.create_oval(223.3,76.7,276.7,23.3)
         MyCanvas.create_oval(223.3,23.3,276.7,76.7)
         testGagne()
+        plateauRempli(c)
     if a == 3:
         MyCanvas.create_oval(23.3,176.7,76.7,123.3)
         MyCanvas.create_oval(23.3,123.3,76.7,176.7)
         testGagne()
+        plateauRempli(c)
     if a == 4:
         MyCanvas.create_oval(123.3,176.7,176.7,123.3)
         MyCanvas.create_oval(123.3,123.3,176.7,176.7)
         testGagne()
+        plateauRempli(c)
     if a == 5:
         MyCanvas.create_oval(223.3,176.7,276.7,123.3)
         MyCanvas.create_oval(223.3,123.3,276.7,176.7)
         testGagne()
+        plateauRempli(c)
     if a == 6:
         MyCanvas.create_oval(23.3,276.7,76.7,223.3)
         MyCanvas.create_oval(23.3,223.3,76.7,276.7)
         testGagne()
+        plateauRempli(c)
     if a == 7:
         MyCanvas.create_oval(123.3,276.7,176.7,223.3)
         MyCanvas.create_oval(123.3,223.3,176.7,276.7)
         testGagne()
+        plateauRempli(c)
     if a == 8:
         MyCanvas.create_oval(223.3,276.7,276.7,223.3)
         MyCanvas.create_oval(223.3,223.3,276.7,276.7)
         testGagne()
-        
+        plateauRempli(c)
     
 
 
@@ -114,127 +134,135 @@ def traceRond():
 #   Tester si le plateau est rempli
 #   Changer le joueur en cours
 def clickFenetre(event):
-    global joueur, plateau , a
+    global joueur, plateau , a 
     xe = event.x
     ye = event.y
     if 0<xe<100:
         if 0<ye<100:
-            print("0")
-            if joueur == 0 :
-                a=0
-                joueur = 1
-                plateau[0][0] = 1
-                traceCroix()
-            else:
-                a=0
-                joueur = 0
-                plateau[0][0] = 0
-                traceRond()
+            if  plateau[0][0] == None:            
+                print("0")
+                if joueur == 0 :
+                    a=0
+                    joueur = 1
+                    plateau[0][0] = 1
+                    traceCroix()
+                else:
+                    a=0
+                    joueur = 0
+                    plateau[0][0] = 0
+                    traceRond()
         if 100<ye<200:
-            print("3")
-            if joueur == 0 :
-                a=3
-                joueur = 1
-                plateau[1][0] = 1
-                traceCroix()
-            else:
-                a=3
-                joueur = 0
-                plateau[1][0] = 0
-                traceRond()
+            if  plateau[1][0] == None:
+                print("3")
+                if joueur == 0 :
+                    a=3
+                    joueur = 1
+                    plateau[1][0] = 1
+                    traceCroix()
+                else:
+                    a=3
+                    joueur = 0
+                    plateau[1][0] = 0
+                    traceRond()
         if 200<ye<300:
-            print("6")
-            if joueur == 0 :
-                a=6
-                joueur = 1
-                plateau[2][0] = 1
-                traceCroix()
-            else:
-                a=6
-                joueur = 0
-                plateau[2][0] = 0
-                traceRond()
+            if  plateau[2][0] == None:
+                print("6")
+                if joueur == 0 :
+                    a=6
+                    joueur = 1
+                    plateau[2][0] = 1
+                    traceCroix()
+                else:
+                    a=6
+                    joueur = 0
+                    plateau[2][0] = 0
+                    traceRond()
     if 100<xe<200:
         if 0<ye<100:
-            print("1")
-            if joueur == 0 :
-                a=1
-                joueur = 1
-                plateau[0][1] = 1
-                traceCroix()
-            else:
-                a=1
-                joueur = 0
-                plateau[0][1] = 0
-                traceRond()
+            if  plateau[0][1] == None:
+                print("1")
+                if joueur == 0 :
+                    a=1
+                    joueur = 1
+                    plateau[0][1] = 1
+                    traceCroix()
+                else:
+                    a=1
+                    joueur = 0
+                    plateau[0][1] = 0
+                    traceRond()
         if 100<ye<200:
-            print("4")
-            if joueur == 0 :
-                a=4
-                joueur = 1
-                plateau[1][1] = 1
-                traceCroix()
-            else:
-                a=4
-                joueur = 0
-                plateau[1][1] = 0
-                traceRond()
+            if  plateau[1][1] == None:
+                print("4")
+                if joueur == 0 :
+                    a=4
+                    joueur = 1
+                    plateau[1][1] = 1
+                    traceCroix()
+                else:
+                    a=4
+                    joueur = 0
+                    plateau[1][1] = 0
+                    traceRond()
         if 200<ye<300:
-            print("7")
-            if joueur == 0 :
-                a=7
-                joueur = 1
-                plateau[2][1] = 1
-                traceCroix()
-            else:
-                a=7
-                joueur = 0
-                plateau[2][1] = 0
-                traceRond()
+            if  plateau[2][1] == None:
+                print("7")
+                if joueur == 0 :
+                    a=7
+                    joueur = 1
+                    plateau[2][1] = 1
+                    traceCroix()
+                else:
+                    a=7
+                    joueur = 0
+                    plateau[2][1] = 0
+                    traceRond()
     if 200<xe<300:
         if 0<ye<100:
-            print("2")
-            if joueur == 0 :
-                a=2
-                joueur = 1
-                plateau[0][2] = 1
-                traceCroix()
-            else:
-                a=2
-                joueur = 0
-                plateau[0][2] = 0
-                traceRond()
+            if  plateau[0][2] == None:
+                print("2")
+                if joueur == 0 :
+                    a=2
+                    joueur = 1
+                    plateau[0][2] = 1
+                    traceCroix()
+                else:
+                    a=2
+                    joueur = 0
+                    plateau[0][2] = 0
+                    traceRond()
         if 100<ye<200:
-            print("5")
-            if joueur == 0 :
-                a=5
-                joueur = 1
-                plateau[1][2] = 1
-                traceCroix()
-            else:
-                a=5
-                joueur = 0   
-                plateau[1][2] = 0 
-                traceRond()
+            if  plateau[1][2] == None:
+                print("5")
+                if joueur == 0 :
+                    a=5
+                    joueur = 1
+                    plateau[1][2] = 1
+                    traceCroix()
+                else:
+                    a=5
+                    joueur = 0   
+                    plateau[1][2] = 0 
+                    traceRond()
         if 200<ye<300:
-            print("8")
-            if joueur == 0 :
-                a=8
-                joueur = 1
-                plateau[2][2] = 1
-                traceCroix()
-            else:
-                a=8
-                joueur = 0
-                plateau[2][2] = 0
-                traceRond()
+            if  plateau[2][2] == None:
+                print("8")
+                if joueur == 0 :
+                    a=8
+                    joueur = 1
+                    plateau[2][2] = 1
+                    traceCroix()
+                else:
+                    a=8
+                    joueur = 0
+                    plateau[2][2] = 0
+                    traceRond()
 # Teste les différentes combinaisons gagnantes et affiche un message si un joueur gagne
 #           [[0, 1, 2],   [0][0],[0][1],[0][2] // [1][0],[1][1],[1][2] // [2][0],[2][1],[2][2] // [0][0],[1][0],[2][0] // [0][1],[1][1],[2][1] // [0][2],[1][2],[2][2] 
 #           [3, 4, 5],    [0][0],[1][1],[2][2] // [0][2],[1][1],[2][0]
 #           [6, 7, 8]]    Les combinaisons gagnantes sont : 012/345/678/036/147/258/048/246     Egalité : 0 3 1 2 4 7 6 8 5
 #
 def testGagne():
-    plateauRempli()
     global jeuTermine
     if plateau[0][0] == 0 and plateau[0][1] == 0  and plateau[0][2] == 0:
         svLabel.set("O WIN !")
@@ -295,13 +323,16 @@ def testGagne():
         print("X8")
 
 # Teste s'il reste une case libre dans le plateau et affiche un message sinon
-def plateauRempli():
+def plateauRempli(c):
     global jeuTermine
-    #if plateau.count(42) == 0:
-    #    print(plateau)
-    #    print("egalité")
-    #    jeuTermine = True
-    #    svLabel.set("EGALITE !")
+    for t in plateau:
+        if None not in t:
+            c+=1
+    if c == 3:
+        print(plateau)
+        print("egalité")
+        jeuTermine = True
+        svLabel.set("EGALITE !") 
         
 def popup():
     fInfos = Toplevel()		  # Popup -> Toplevel()
@@ -348,6 +379,7 @@ svLabel.set("Jeu en cours...")
 MyCanvas.bind("<Button-1>", clickFenetre)
 
 # Initialise les variables
+c = 0
 joueur = 0
 jeuTermine = False
 plateau = [[None, None, None],
